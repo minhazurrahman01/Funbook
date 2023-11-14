@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "241955008944",
+    "project_id": "fun-book-87088",
+    "storage_bucket": "fun-book-87088.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241955008944:android:a999ff1c076553f6e52675",
+        "android_client_info": {
+          "package_name": "com.example.funbook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrjGj8Xqq_q63AZLrQlRzzICUuP_5r6jc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
