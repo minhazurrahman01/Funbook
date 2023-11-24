@@ -17,13 +17,14 @@
         />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/userTextField"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Full Name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/r_userTextField"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,13 +33,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailTextField"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email Address"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/r_emailTextField"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +49,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextField"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -56,6 +58,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/r_passwordTextField"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +68,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/login_btn_selector"
-        android:id="@+id/register_btn"
+        android:id="@+id/registerbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"

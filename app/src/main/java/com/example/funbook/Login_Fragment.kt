@@ -6,24 +6,51 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputBinding
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import com.example.funbook.databinding.FragmentLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
-class Login_Fragment : Fragment() {
+class Login_Fragment :  BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate){
 
-lateinit var binding: FragmentLoginBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        binding= FragmentLoginBinding.inflate(inflater,container,false)
+
+     var userr=  FirebaseAuth.getInstance().currentUser
+
+
+       if (userr!=null) {
+        findNavController().navigate(R.id.action_login_Fragment_to_homeFragment)
+    }
+
+
         binding.dontHaveAccountTv.setOnClickListener {
             findNavController().navigate(R.id.action_login_Fragment_to_registration_Fragment)
         }
-        return binding.root
+
+
+        binding.loginBtn.setOnClickListener {
+            val email= binding.emailTextField.text.toString().trim()
+            val password= binding.passwordTextField.text.toString().trim()
+
+            login(email,password)
+        }
+
+
+    }
+
+    private fun login(email: String, password: String) {
+        mAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
+            findNavController().navigate(R.id.action_login_Fragment_to_homeFragment)
+
+        }.addOnFailureListener {
+            val alertDialog= AlertDialog.Builder(requireActivity()).setTitle("Error")
+                .setMessage(it.message)
+            alertDialog.create().show()
+        }
+
     }
 
 }
